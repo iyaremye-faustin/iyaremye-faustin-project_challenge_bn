@@ -1,0 +1,92 @@
+openapi: 3.0.0
+info:
+  title: User API
+  version: 1.0.0
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        names:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        telephone:
+          type: string
+        idpassportnumber:
+          type: string
+        username:
+          type: string
+    Login:
+      type: object
+      properties:
+        login:
+          type: string
+        password:
+          type: string
+
+paths:
+  /api/v1/users/signup:
+    post:
+      tags:
+        - User
+      summary: Create a new user
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  /api/v1/users:
+    get:
+      tags:
+        - User
+      summary: Get all users
+      operationId: getUsers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+  /api/v1/users/signin:
+    post:
+      tags:
+        - User
+      summary: Login
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Login'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Login'
+  /auth/signout:
+    post:
+      tags:
+        - User
+      summary: Logout
+      operationId: logout
+      responses:
+        '200':
+          description: OK

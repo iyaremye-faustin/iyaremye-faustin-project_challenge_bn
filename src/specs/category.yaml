@@ -1,0 +1,27 @@
+definitions:
+  Category:
+    type: object
+    properties:
+      categ_id:
+        type: number
+      name:
+        type: string
+      description:
+        type: string
+paths:
+  /api/v1/categories:
+    get:
+      tags:
+        - Category
+      summary: List all product categories
+      description: List all product categories
+      operationId: listCategories
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Caategory'
