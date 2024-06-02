@@ -84,3 +84,31 @@ paths:
                 $ref: '#/components/schemas/Order'
         '404':
           description: Order not found
+
+  /api/v1/orders/{order_id}/approve:
+    put:
+      tags:
+        - Order
+      summary: Approve an order by ID
+      operationId: approveOrder
+      parameters:
+        - name: order_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The ID of the order to approve
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  order:
+                    $ref: '#/components/schemas/Order'
+        '404':
+          description: Order not found

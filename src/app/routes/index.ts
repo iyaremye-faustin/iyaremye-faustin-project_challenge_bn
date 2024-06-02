@@ -11,7 +11,7 @@ const {
   getAllcategories,
   postProduct,
 } = ProductRoutes;
-const { postOrder, getOrders } = OrderRoutes;
+const { postOrder, getOrders, orderApprove } = OrderRoutes;
 const routes: IRoute[] = [
   userSignup,
   userSignin,
@@ -25,6 +25,7 @@ const routes: IRoute[] = [
   getOrders,
   users,
   changeRole,
+	orderApprove
 ];
 
 export default routes;

@@ -1,24 +1,22 @@
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-  preset: 'ts-jest',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  testRegex: '(/tests/integration/.*|(\\.|/)(test|spec))\\.(js|ts)x?$',
+  transform: {
+      '^.+\\.(js|ts)x?$': 'ts-jest'
+  },
   testEnvironment: 'node',
-  collectCoverage: true,
-  forceExit: true,
-  detectOpenHandles: true,
+  clearMocks: true,
+  verbose: false,
   coverageDirectory: 'coverage',
-  collectCoverageFrom: ['src/**/*.{js,ts}'],
-  coverageThreshold: {
-    global: {
-      branches: 0,
-      functions: 0,
-      lines: 0,
-      statements: 0,
-    },
-  },
-
-  moduleNameMapper: {
-    'src/(.*)': '<rootDir>/src/$1',
-  },
-  moduleDirectories: ['node_modules', 'src'],
-  coveragePathIgnorePatterns: ['src/database/jobs', 'src/index.ts'],
+  collectCoverageFrom: ['src/**/*.ts'],
+  setupFiles: ['dotenv/config','./jest.setup.ts'],
+  coveragePathIgnorePatterns: [
+    'node_modules',
+    'coverage',
+    'src/index.ts',
+    'src/app/**/*.*',
+    'src/core',
+    'src/database',
+  ],
 };

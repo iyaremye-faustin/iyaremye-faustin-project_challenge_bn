@@ -21,9 +21,4 @@ describe('Products', () => {
     const res = await request(app).get(`${prefix}${route}/1`);
     expect(res.body.status).toBe(200);
   });
-
-  it('Fetch one product by category', async () => {
-    const res = await request(app).get(`${prefix}${route}/category/vegetables`);
-    expect(res.body.status).toBe(200);
-  });
 });

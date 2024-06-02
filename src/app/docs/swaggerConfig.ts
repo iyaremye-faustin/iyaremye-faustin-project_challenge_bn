@@ -3,9 +3,9 @@ const options: Options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Legal-connect-app-api-center API',
+      title: 'Crop Production Management Web API',
       version: '1.0.0',
-      description: 'Legal-connect-app-api-center API ',
+      description: 'Crop Production Management Web API',
     },
     path: {},
     security: [
