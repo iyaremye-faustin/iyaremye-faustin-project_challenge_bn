@@ -15,6 +15,8 @@ components:
           type: string
         image_url:
           type: string
+        quantity_per_acre:
+          type: integer
 
 paths:
   /api/v1/products:
@@ -100,3 +102,28 @@ paths:
                 $ref: '#/components/schemas/Product'
         '404':
           description: Product not found
+
+  /api/v1/products/category/{category_id}:
+    get:
+      tags:
+        - Product
+      summary: Get products by category ID
+      operationId: getProductsByCategoryId
+      parameters:
+        - name: category_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID of the category to get products from
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+        '404':
+          description: No products found for this category

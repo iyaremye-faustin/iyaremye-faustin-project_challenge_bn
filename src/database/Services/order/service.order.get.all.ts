@@ -8,8 +8,22 @@ class GetAllOrdersService extends BaseService {
       raw: false,
 			limit: limit,
       offset: offset,
+			order: [['order_id', 'ASC']],
+			include: [
+        {
+          model: this.database.User,
+          as: 'user',
+					attributes: {
+						exclude: ['password', 'salt'],
+					},
+        },
+				{
+          model: this.database.OrderItem,
+          as: 'items',
+        },
+      ],
     });
-		
+
     if (!orders) return null;
 
     return orders;

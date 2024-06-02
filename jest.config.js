@@ -10,7 +10,7 @@ module.exports = {
   verbose: false,
   coverageDirectory: 'coverage',
   collectCoverageFrom: ['src/**/*.ts'],
-  setupFiles: ['dotenv/config','./jest.setup.ts'],
+  //setupFiles: ['dotenv/config','./jest.setup.ts'],
   coveragePathIgnorePatterns: [
     'node_modules',
     'coverage',

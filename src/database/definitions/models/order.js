@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Role = sequelize.define(
+  const Order = sequelize.define(
     'Order',
     {
       order_id: {
@@ -14,6 +14,14 @@ module.exports = (sequelize, DataTypes) => {
 			approved_id: {
 				type: DataTypes.BIGINT,
 				allowNull: true,
+			},
+			land_size_acre: {
+				type: DataTypes.BIGINT,
+				allowNull: false,
+			},
+			total_amount: {
+				type: DataTypes.BIGINT,
+				allowNull: false,
 			},
 			is_paid:{
 				type: DataTypes.TINYINT,
@@ -31,6 +39,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     { tableName: 'orders' }
   );
-
-  return Role;
+	Order.associate = (models) => {
+		Order.belongsTo(models.User, { foreignKey: 'farmer_id' ,as: 'user'});
+		Order.belongsTo(models.User, { foreignKey: 'approved_id' ,as: 'approved'});
+		Order.hasMany(models.OrderItem, { foreignKey: 'order_id' ,as: 'items'});
+	}
+  return Order;
 };

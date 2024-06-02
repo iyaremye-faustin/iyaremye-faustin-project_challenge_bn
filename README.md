@@ -9,6 +9,15 @@ This project served as API to crop production web project
 npm install
 ```
 
+```
+npm db:migrate
+```
+
+## INIT BASIC DATA
+```
+npm db:seed
+```
+
 ### Compiles and hot-reloads for development
 
 ```

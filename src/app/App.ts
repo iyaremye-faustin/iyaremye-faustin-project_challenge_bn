@@ -39,7 +39,7 @@ class App {
     this.app.get('/', (req: Request, res: Response) => {
       return res.status(200).json({
         statusCode: 200,
-        message: 'Welcome to Agro-farming web api',
+        message: 'Welcome to Agro-farming web API',
       });
     });
 

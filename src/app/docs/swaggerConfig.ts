@@ -26,6 +26,10 @@ const options: Options = {
     },
     servers: [
       {
+        url: 'https://chef-dep.onrender.com',
+        description: 'API Server Production',
+      },
+			{
         url: 'http://localhost:4001',
         description: 'API Server Localhost',
       },

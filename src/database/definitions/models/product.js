@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.BIGINT,
 				allowNull: true,
 			},
+			quantity_per_acre: {
+				type: DataTypes.INTEGER,
+				allowNull: false,
+			},
       description: {
         type: DataTypes.STRING,
         allowNull: false,
