@@ -6,14 +6,8 @@ class UserSignupModule extends BaseModule {
   private Utils = Util;
 
   protected async module(req: Request, res: Response): Promise<any> {
-    const {
-      names,
-      telephone,
-      email,
-      password,
-      username,
-      idpassportnumber,
-    } = req.body;
+    const { names, telephone, email, password, username, idpassportnumber } =
+      req.body;
 
     const user = await this.Service.User.Signup.call({
       full_name: names,
@@ -21,7 +15,7 @@ class UserSignupModule extends BaseModule {
       email,
       password,
       user_name: username,
-			id_passport_number: idpassportnumber
+      id_passport_number: idpassportnumber,
     });
 
     if (!user) {

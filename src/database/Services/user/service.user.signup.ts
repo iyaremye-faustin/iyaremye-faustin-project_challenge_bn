@@ -9,7 +9,7 @@ class UserSignupService extends BaseService {
       email,
       password,
       user_name,
-			id_passport_number
+      id_passport_number,
     } = data;
 
     const salt = this.Password.salt();
@@ -20,9 +20,9 @@ class UserSignupService extends BaseService {
       phone_number,
       email,
       user_name,
-			id_passport_number,
+      id_passport_number,
       password: hashedPassword,
-			role_id:3,
+      role_id: 3,
       salt,
     });
 

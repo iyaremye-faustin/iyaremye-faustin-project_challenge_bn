@@ -10,6 +10,12 @@ const getProductsByCategory = new GetProductsByCategoryRoute();
 const getAllcategories = new GetAllProductCategoriesRoute();
 const postProduct = new PostProductsRoute();
 
-const ProductRoutes = { getAllProducts, getOneProduct, getProductsByCategory, getAllcategories, postProduct };
+const ProductRoutes = {
+  getAllProducts,
+  getOneProduct,
+  getProductsByCategory,
+  getAllcategories,
+  postProduct,
+};
 
 export default ProductRoutes;

@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     'Role',
     {
       role_id: {
-        type: DataTypes.BIGINT(20),
+        type: DataTypes.BIGINT,
         primaryKey: true,
         autoIncrement: true,
       },

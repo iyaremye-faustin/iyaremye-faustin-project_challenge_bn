@@ -11,13 +11,13 @@ class UserSigninService extends BaseService {
           { phone_number: data.login },
         ],
       },
-			include: [
-				{
-					model: this.database.Role,
-					as: 'role',
-					attributes:['role_name'],
-				},
-			],
+      include: [
+        {
+          model: this.database.Role,
+          as: 'role',
+          attributes: ['role_name'],
+        },
+      ],
     });
 
     if (!user) return null;

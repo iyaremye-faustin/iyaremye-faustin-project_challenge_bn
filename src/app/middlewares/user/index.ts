@@ -8,6 +8,11 @@ const CheckUserNumberExist = new CheckNumberExistMiddleware();
 const CheckUserAuthenticated = new CheckUserAuthenticatedMiddleware();
 const CheckUserAdmin = new CheckUserIsAdminMiddleware();
 
-const UserMiddlewares = { CheckUserEmailExist, CheckUserNumberExist, CheckUserAuthenticated, CheckUserAdmin };
+const UserMiddlewares = {
+  CheckUserEmailExist,
+  CheckUserNumberExist,
+  CheckUserAuthenticated,
+  CheckUserAdmin,
+};
 
 export default UserMiddlewares;

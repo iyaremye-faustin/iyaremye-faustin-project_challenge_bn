@@ -21,7 +21,7 @@ abstract class BaseModule extends Base {
     return this.error(res, this.UNAUTHORIZED_CODE, this.UNAUTHORIZED_MSG);
   }
 
-	protected notFound(res: Response): Response<TResponse> {
+  protected notFound(res: Response): Response<TResponse> {
     return this.error(res, this.NOT_FOUND_CODE, this.NOT_FOUND_MSG);
   }
 

@@ -5,7 +5,7 @@ import OrderModules from './order';
 const Modules = {
   UserModules,
   ProductsModules,
-	OrderModules
+  OrderModules,
 };
 
 export default Modules;

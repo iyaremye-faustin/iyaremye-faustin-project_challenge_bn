@@ -14,16 +14,14 @@ class PostOrdersRoute implements IRoute {
   }
 
   private initRoute() {
-    this.router
-      .route(`${this.path}`)
-      .post(
-				(req: Request, res: Response, next: NextFunction) =>
-					Middlewares.UserMiddlewares.CheckUserAuthenticated.run(req, res, next),
-				(req: Request, res: Response, next: NextFunction) =>
-					Validators.OrderValidator.newOrder.run(req, res, next),
-				(req: Request, res: Response) =>
+    this.router.route(`${this.path}`).post(
+      (req: Request, res: Response, next: NextFunction) =>
+        Middlewares.UserMiddlewares.CheckUserAuthenticated.run(req, res, next),
+      (req: Request, res: Response, next: NextFunction) =>
+        Validators.OrderValidator.newOrder.run(req, res, next),
+      (req: Request, res: Response) =>
         Modules.OrderModules.NewOrder.execute(req, res)
-      );
+    );
   }
 }
 

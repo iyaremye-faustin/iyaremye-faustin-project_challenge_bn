@@ -9,7 +9,7 @@ const UpdateRole = new ChangeRoleValidator();
 const User = {
   Signup,
   Signin,
-	UpdateRole
+  UpdateRole,
 };
 
 export default User;

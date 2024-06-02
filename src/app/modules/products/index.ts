@@ -10,6 +10,12 @@ const GetByCategory = new GetProductByCategoryModule();
 const GetCategories = new GetAllCategoriesModule();
 const PostProduct = new PostProductModule();
 
-const ProductsModules = { GetOne, GetAll, GetByCategory, GetCategories, PostProduct };
+const ProductsModules = {
+  GetOne,
+  GetAll,
+  GetByCategory,
+  GetCategories,
+  PostProduct,
+};
 
 export default ProductsModules;

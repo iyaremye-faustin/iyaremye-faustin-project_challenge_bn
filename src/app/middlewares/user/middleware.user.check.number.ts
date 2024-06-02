@@ -12,7 +12,11 @@ class CheckNumberExistMiddleware extends BaseMiddleware {
     const user = await this.Service.User.GetUserByNumber.call(telephone);
 
     if (user) {
-      return this.responseHandler(res, this.BAD_REQUEST_CODE, 'Telephone already exists');
+      return this.responseHandler(
+        res,
+        this.BAD_REQUEST_CODE,
+        'Telephone already exists'
+      );
     }
 
     return next();

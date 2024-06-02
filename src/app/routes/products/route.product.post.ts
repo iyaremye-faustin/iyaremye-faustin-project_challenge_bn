@@ -14,16 +14,14 @@ class PostProductsRoute implements IRoute {
   }
 
   private initRoute() {
-    this.router
-      .route(`${this.path}`)
-      .post(
-				(req: Request, res: Response, next: NextFunction) =>
-					Validators.Products.PostProduct.run(req, res, next),
-				(req: Request, res: Response, next: NextFunction) =>
-					Middlewares.ProductMiddlewares.CheckCategoryExist.run(req, res, next),
-				(req: Request, res: Response) =>
+    this.router.route(`${this.path}`).post(
+      (req: Request, res: Response, next: NextFunction) =>
+        Validators.Products.PostProduct.run(req, res, next),
+      (req: Request, res: Response, next: NextFunction) =>
+        Middlewares.ProductMiddlewares.CheckCategoryExist.run(req, res, next),
+      (req: Request, res: Response) =>
         Modules.ProductsModules.PostProduct.execute(req, res)
-      );
+    );
   }
 }
 

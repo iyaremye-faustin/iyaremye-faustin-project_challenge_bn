@@ -4,7 +4,7 @@ export type TCreateUserType = {
   email: string;
   password: string;
   user_name: string;
-	id_passport_number: String;
+  id_passport_number: String;
 };
 
 export type TLoginUserType = {
@@ -18,5 +18,5 @@ export type IUSER = {
   email: string;
   password: string;
   user_name: string;
-	id_passport_number: String;
+  id_passport_number: String;
 };

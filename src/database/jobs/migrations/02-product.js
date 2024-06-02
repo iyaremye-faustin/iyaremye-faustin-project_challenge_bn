@@ -2,7 +2,7 @@ module.exports = {
   up: async (queryInterface, DataTypes) => {
     await queryInterface.createTable('products', {
 			product_id: {
-        type: DataTypes.BIGINT(20),
+        type: DataTypes.BIGINT,
         primaryKey: true,
         autoIncrement: true,
       },

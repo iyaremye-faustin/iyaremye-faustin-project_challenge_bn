@@ -4,5 +4,5 @@ export type TCreateProductType = {
   fertilizer_id: number;
   description: string;
   image_url: string;
-	price:number;
+  price: number;
 };

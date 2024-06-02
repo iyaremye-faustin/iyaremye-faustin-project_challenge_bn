@@ -2,7 +2,7 @@ import UserMiddlewares from '@src/app/middlewares/user';
 import ProductMiddlewares from '@src/app/middlewares/product';
 const Middlewares = {
   UserMiddlewares,
-	ProductMiddlewares
+  ProductMiddlewares,
 };
 
 export default Middlewares;

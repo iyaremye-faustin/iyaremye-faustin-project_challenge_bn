@@ -5,7 +5,7 @@ import Orders from '@src/database/Services/order';
 const Service = {
   User,
   Products,
-	Orders
+  Orders,
 };
 
 export default Service;

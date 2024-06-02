@@ -13,14 +13,12 @@ class GetAllUsersRoute implements IRoute {
   }
 
   private initRoute() {
-    this.router
-      .route(`${this.path}`)
-      .get(
-				(req: Request, res: Response, next: NextFunction) =>
-					Middlewares.UserMiddlewares.CheckUserAdmin.run(req, res, next),
-				(req: Request, res: Response) =>
+    this.router.route(`${this.path}`).get(
+      (req: Request, res: Response, next: NextFunction) =>
+        Middlewares.UserMiddlewares.CheckUserAdmin.run(req, res, next),
+      (req: Request, res: Response) =>
         Modules.UserModules.GetUsers.execute(req, res)
-      );
+    );
   }
 }
 

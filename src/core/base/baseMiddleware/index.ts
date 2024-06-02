@@ -8,7 +8,7 @@ import IJoiError from '@src/core/interfaces/joiErrorInterface';
 abstract class BaseMiddleware extends Base implements IJoiError {
   protected joi = joi;
 
-  private options: any = { };
+  private options: any = {};
 
   protected bodyHandler(
     req: Request,

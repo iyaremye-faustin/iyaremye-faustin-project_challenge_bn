@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     'User',
     {
       user_id: {
-        type: DataTypes.BIGINT(20),
+        type: DataTypes,
         primaryKey: true,
         autoIncrement: true,
       },
@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       active: {
-        type: DataTypes.TINYINT(1),
+        type: DataTypes.INTEGER,
         allowNull: true,
         defaultValue: 1,
       },
@@ -44,6 +44,13 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.BIGINT,
 				default: 3,
 			},
+			is_email: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
+        comment:
+          'this field show if the user email is verified or not :1 = verified, 0 = not verified',
+      },
 			salt: {
         type: DataTypes.STRING,
         allowNull: true,

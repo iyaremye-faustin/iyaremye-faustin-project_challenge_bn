@@ -24,4 +24,4 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/Caategory'
+              $ref: '#/definitions/Category'

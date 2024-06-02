@@ -9,7 +9,6 @@ import GetUserByIdService from '@src/database/Services/user/service.get.user.by.
 import UpdateUserService from '@src/database/Services/user/service.update.user';
 import GetCountAllUsersService from '@src/database/Services/user/service.user.count';
 
-
 const Signup = new UserSignupService();
 const GetUserByEmail = new GetUserByEmailService();
 const GetUserByNumber = new GetUserByNumberService();
@@ -21,7 +20,17 @@ const GetUserById = new GetUserByIdService();
 const UpdateUser = new UpdateUserService();
 const CountUsers = new GetCountAllUsersService();
 
-const User = { Signup, GetUserByEmail, GetUserByNumber, Signin, GetAllRoles, GetAllUsers, GetRoleByName, GetUserById,UpdateUser, CountUsers };
-
+const User = {
+  Signup,
+  GetUserByEmail,
+  GetUserByNumber,
+  Signin,
+  GetAllRoles,
+  GetAllUsers,
+  GetRoleByName,
+  GetUserById,
+  UpdateUser,
+  CountUsers,
+};
 
 export default User;

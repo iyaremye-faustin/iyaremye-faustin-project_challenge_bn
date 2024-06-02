@@ -2,7 +2,7 @@ module.exports = {
   up: async (queryInterface, DataTypes) => {
     await queryInterface.createTable('users', {
       user_id: {
-        type: DataTypes.BIGINT(20),
+        type: DataTypes.BIGINT,
         primaryKey: true,
         autoIncrement: true,
       },
@@ -34,12 +34,12 @@ module.exports = {
 				unique:true,
       },
       active: {
-        type: DataTypes.TINYINT(1),
+        type: DataTypes.INTEGER,
         allowNull: true,
         defaultValue: 1,
       },
       status: {
-        type: DataTypes.TINYINT(1),
+        type: DataTypes.INTEGER,
         allowNull: true,
         defaultValue: 1,
       },
@@ -48,7 +48,7 @@ module.exports = {
 				default: 3,
 			},
       is_email: {
-        type: DataTypes.TINYINT(1),
+        type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
         comment:

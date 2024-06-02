@@ -12,6 +12,13 @@ const GetAllCategories = new GetAllCategoriesService();
 const PostProduct = new PostProductService();
 const GetOneCategory = new GetOneCategoryService();
 
-const Products = { GetAllProducts, GetOne, GetByCategory, GetAllCategories, PostProduct, GetOneCategory };
+const Products = {
+  GetAllProducts,
+  GetOne,
+  GetByCategory,
+  GetAllCategories,
+  PostProduct,
+  GetOneCategory,
+};
 
 export default Products;

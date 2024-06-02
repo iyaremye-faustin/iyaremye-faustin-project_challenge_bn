@@ -8,11 +8,11 @@ class PostProductValidator extends BaseMiddleware {
       category_id: Joi.number().required(),
       price: Joi.number().required(),
       fertilizer_id: Joi.number().integer().positive(),
-			name: this.joi.string().required(),
-			image_url: this.joi.string(),
-			description: this.joi.string().required(),
+      name: this.joi.string().required(),
+      image_url: this.joi.string(),
+      description: this.joi.string().required(),
     });
-		this.bodyHandler(req, res, itemSchema, next);
+    this.bodyHandler(req, res, itemSchema, next);
   }
 }
 

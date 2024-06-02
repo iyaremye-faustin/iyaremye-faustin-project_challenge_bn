@@ -3,7 +3,7 @@ import BaseMiddleware from '@src/core/base/baseMiddleware';
 import Util from '@src/core/utils';
 
 class CheckUserAuthenticatedMiddleware extends BaseMiddleware {
-	private Utils = Util;
+  private Utils = Util;
 
   protected async middleware(
     req: any,
@@ -19,7 +19,11 @@ class CheckUserAuthenticatedMiddleware extends BaseMiddleware {
     const decoded = this.Utils.Token.decode(token);
 
     if (decoded.errors) {
-      return this.responseHandler(res, this.UNAUTHORIZED_CODE, 'Invalid Authentication');
+      return this.responseHandler(
+        res,
+        this.UNAUTHORIZED_CODE,
+        'Invalid Authentication'
+      );
     }
     req.user = decoded.payload;
 

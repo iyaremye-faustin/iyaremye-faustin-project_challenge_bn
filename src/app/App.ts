@@ -15,7 +15,7 @@ class App {
   constructor(routes: IRoute[]) {
     this.app = express();
     this.initMiddlewares();
-		this.initSwagger();
+    this.initSwagger();
     this.initRoutes(routes);
     this.initDefaultRoutes();
   }
@@ -56,12 +56,10 @@ class App {
       });
     });
   }
-	private initSwagger(): void {
+  private initSwagger(): void {
     const specs = swaggerJsdoc(swaggerConfig);
     this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
   }
-
-
 
   listen(): void {
     this.app.listen(port, () => {

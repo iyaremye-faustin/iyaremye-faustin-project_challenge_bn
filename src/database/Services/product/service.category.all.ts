@@ -1,4 +1,4 @@
-import BaseService from "@src/database/system/base/serviceBase";
+import BaseService from '@src/database/system/base/serviceBase';
 
 class GetAllCategoriesService extends BaseService {
   protected async transation(): Promise<any> {

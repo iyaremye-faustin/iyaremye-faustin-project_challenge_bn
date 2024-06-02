@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     'Order',
     {
       order_id: {
-        type: DataTypes.BIGINT(20),
+        type: DataTypes.BIGINT,
         primaryKey: true,
         autoIncrement: true,
       },
@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
 				allowNull: true,
 			},
 			is_paid:{
-				type: DataTypes.TINYINT(1),
+				type: DataTypes.TINYINT,
         allowNull: false,
         defaultValue: 0,
 			},

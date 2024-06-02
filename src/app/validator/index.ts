@@ -5,7 +5,7 @@ import OrderValidator from '@src/app/validator/order';
 const Validators = {
   User,
   Products,
-	OrderValidator
+  OrderValidator,
 };
 
 export default Validators;

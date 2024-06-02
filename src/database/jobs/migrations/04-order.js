@@ -2,7 +2,7 @@ module.exports = {
   up: async (queryInterface, DataTypes) => {
     await queryInterface.createTable('orders', {
 			order_id: {
-        type: DataTypes.BIGINT(20),
+        type: DataTypes.BIGINT,
         primaryKey: true,
         autoIncrement: true,
       },
@@ -15,7 +15,7 @@ module.exports = {
 				allowNull: true,
 			},
 			is_paid:{
-				type: DataTypes.TINYINT(1),
+				type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
 			},

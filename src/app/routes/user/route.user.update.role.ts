@@ -15,8 +15,8 @@ class UpdateUserRoleRoute implements IRoute {
 
   private initRoute() {
     this.router.route(`${this.path}/change-role`).put(
-			(req: Request, res: Response, next: NextFunction) =>
-				Middlewares.UserMiddlewares.CheckUserAdmin.run(req, res, next),
+      (req: Request, res: Response, next: NextFunction) =>
+        Middlewares.UserMiddlewares.CheckUserAdmin.run(req, res, next),
 
       (req: Request, res: Response, next: NextFunction) =>
         Validators.User.UpdateRole.run(req, res, next),

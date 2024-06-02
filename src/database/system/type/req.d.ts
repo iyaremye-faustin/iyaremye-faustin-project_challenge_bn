@@ -1,4 +1,4 @@
-import { IUSER } from "./user";
+import { IUSER } from './user';
 declare global {
   namespace Express {
     interface Request {
