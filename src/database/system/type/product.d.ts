@@ -5,4 +5,5 @@ export type TCreateProductType = {
   description: string;
   image_url: string;
   price: number;
+	quantity_per_acre;
 };

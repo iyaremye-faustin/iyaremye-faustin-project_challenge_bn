@@ -12,6 +12,8 @@ class PostOrderValidator extends BaseMiddleware {
 
     const schema = Joi.object({
       items: Joi.array().items(itemSchema).min(1).required(),
+			land_size_acre: Joi.number().integer().positive().required(),
+			total_amount: Joi.number().integer().positive().required()
     });
     this.bodyHandler(req, res, schema, next);
   }

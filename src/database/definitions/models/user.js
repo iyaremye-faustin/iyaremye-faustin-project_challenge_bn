@@ -60,6 +60,7 @@ module.exports = (sequelize, DataTypes) => {
   );
 	User.associate = (models) => {
     User.belongsTo(models.Role, { foreignKey: 'role_id' ,as: 'role'});
+		User.hasMany(models.Order, { foreignKey: 'farmer_id' ,as: 'orders'});
   };
   return User;
 };

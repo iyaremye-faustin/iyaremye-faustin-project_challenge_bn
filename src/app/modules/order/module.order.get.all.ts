@@ -11,9 +11,6 @@ class GetAllOrdersModule extends BaseModule {
       const role = await this.Service.User.GetRoleByName.call(role_name);
       if (role.role_name =='farmer') {
 				const orders = await this.Service.Orders.OrdersByUser.call({user_id, page,limit});
-				orders.map((el:any)=>{
-					el.payment_status = el.is_paid ? 'Paid':'Not Paid'
-				})
 				return this.responseHandler(res, this.SUCCESS_CODE, this.SUCCESS_MSG, orders);
       }
 
@@ -21,16 +18,13 @@ class GetAllOrdersModule extends BaseModule {
       if (!orders) {
         return this.badRequest(res);
       }
-
-			orders.map((el:any)=>{
-				el.payment_status = el.is_paid == 1 ? 'Paid':'Not Paid'
-			})
       const count = await this.Service.Orders.CountOrders.call();
       return this.responseHandler(res, this.SUCCESS_CODE, this.SUCCESS_MSG, {
         orders,
         count,
       });
     } catch (error) {
+			console.log(error)
       return this.responseHandler(
         res,
         this.INTERNAL_SERVER_ERROR_CODE,

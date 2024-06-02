@@ -5,10 +5,24 @@ class GetAllOrdersByUserService extends BaseService {
 		const {user_id, page, limit} = data;
 		const offset = (page - 1) * limit;
     const orders = await this.database.Order.findAll({
-      raw: true,
+      raw: false,
       where: { farmer_id: user_id },
 			limit: limit,
       offset: offset,
+			order: [['order_id', 'ASC']],
+			include: [
+        {
+          model: this.database.User,
+          as: 'user',
+					attributes: {
+						exclude: ['password', 'salt'],
+					},
+        },
+				{
+          model: this.database.OrderItem,
+          as: 'items',
+        },
+      ],
     });
 
     if (!orders) return null;

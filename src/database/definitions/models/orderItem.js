@@ -1,31 +1,27 @@
-module.exports = {
-  up: async (queryInterface, DataTypes) => {
-    await queryInterface.createTable('orders', {
-			order_id: {
+module.exports = (sequelize, DataTypes) => {
+  const OrderItem = sequelize.define(
+    'OrderItem',
+    {
+			item_id: {
         type: DataTypes.BIGINT,
         primaryKey: true,
         autoIncrement: true,
       },
-			farmer_id: {
+			order_id: {
 				type: DataTypes.BIGINT,
 				allowNull: false,
 			},
-			approved_id: {
+			product_id: {
 				type: DataTypes.BIGINT,
 				allowNull: true,
 			},
-			land_size_acre: {
-				type: DataTypes.BIGINT,
-				allowNull: false,
-			},
-			total_amount: {
-				type: DataTypes.BIGINT,
-				allowNull: false,
-			},
-			is_paid:{
+			price:{
 				type: DataTypes.INTEGER,
         allowNull: false,
-        defaultValue: 0,
+			},
+			quantity:{
+				type: DataTypes.INTEGER,
+        allowNull: false,
 			},
       createdAt: {
         allowNull: false,
@@ -35,9 +31,9 @@ module.exports = {
         allowNull: false,
         type: DataTypes.DATE,
       },
-    });
-  },
-  down: async queryInterface => {
-    await queryInterface.dropTable('orders');
-  },
+    },
+    { tableName: 'orders_items' }
+  );
+
+  return OrderItem;
 };

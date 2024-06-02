@@ -1,15 +1,15 @@
 import BaseService from '@src/database/system/base/serviceBase';
 
 class GetProductByCategoryService extends BaseService {
-  protected async transation(category: string): Promise<any> {
-    const product = await this.database.Product.findAll({
+  protected async transation(category_id: string): Promise<any> {
+    const products = await this.database.Product.findAll({
       raw: true,
-      where: { category },
+      where: { category_id },
     });
 
-    if (!product) return null;
+    if (!products) return null;
 
-    return product;
+    return products;
   }
 }
 
