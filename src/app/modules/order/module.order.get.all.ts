@@ -14,7 +14,7 @@ class GetAllOrdersModule extends BaseModule {
 				return this.responseHandler(res, this.SUCCESS_CODE, this.SUCCESS_MSG, orders);
       }
 
-      const orders = await this.Service.Orders.GetAll.call();
+      const orders = await this.Service.Orders.GetAll.call({user_id, page,limit});
       if (!orders) {
         return this.badRequest(res);
       }
