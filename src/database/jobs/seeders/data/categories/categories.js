@@ -6,14 +6,12 @@ const currentDate = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 
 module.exports = [
   {
-		categ_id: 1,
 		name: "fertilizer",
 		description: 'Feritilizer',
     createdAt: currentDate,
     updatedAt: currentDate,
   },
   {
-		categ_id: 2,
 		name: "seed",
 		description: 'Seedes',
     createdAt: currentDate,
