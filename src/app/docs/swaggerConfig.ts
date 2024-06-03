@@ -26,7 +26,7 @@ const options: Options = {
     },
     servers: [
       {
-        url: 'https://chef-dep.onrender.com',
+        url: 'https://dev.umujyi.com',
         description: 'API Server Production',
       },
 			{
