@@ -6,14 +6,14 @@ const dbconfig = {
     password: process.env.DB_PASSWORD_DEV,
     database: process.env.DB_NAME_DEV,
     host: process.env.DB_HOST_DEV,
-    dialect: 'postgres',
+    dialect: process.env.DB_DIALECT_DEV,
   },
   test: {
     username: process.env.DB_USERNAME_TEST,
     password: process.env.DB_PASSWORD_TEST,
     database: process.env.DB_NAME_TEST,
     host: process.env.DB_HOST_TEST,
-    dialect: 'postgres',
+    dialect: process.env.DB_DIALECT_TEST,
 		logging: false,
     dialectOptions: {
       ssl: { require: false, rejectUnauthorized: false }
@@ -25,7 +25,7 @@ const dbconfig = {
     database: process.env.DB_NAME_PROD,
     host: process.env.DB_HOST_PROD,
     dialect: process.env.DB_DIALECT_PROD,
-    dialect: 'postgres',
+    dialect: process.env.DB_DIALECT_PROD,
     dialectoptions: {
       ssl: {
         rejectUnauthorized: false,
