@@ -8,7 +8,7 @@
     "test:dev": "env NODE_ENV=test npm sequelize && npm test",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "start": "npm run db:reset:all && npm run db:migrate && npm run db:seed && node -r ts-node/register/transpile-only -r tsconfig-paths/register  ./dist/index.js",
+    "start": "npm run sequelize && node -r ts-node/register/transpile-only -r tsconfig-paths/register  ./dist/index.js --node-args='-r ts-node/register/transpile-only -r tsconfig-paths/register'",
     "build": "mkdir dist && npm ci && tsc -p tsconfig.prod.json",
     "db:prod": "env NODE_ENV=production npm db:create && npm db:migrate && npm db:seed npm build",
     "dev": "nodemon",
@@ -17,7 +17,7 @@
     "format": "prettier --write **/*.ts",
     "format:check": "prettier --check **/*.ts",
     "commit": "cz",
-    "sequelize": "npm db:drop && npm db:create && npm db:migrate && npm db:seed",
+    "sequelize": "npm run db:reset:all && npm run db:migrate && npm run db:seed",
     "db:create": "sequelize db:create",
     "db:drop": "sequelize db:drop",
     "db:migrate": "npx sequelize-cli db:migrate",
@@ -35,9 +35,6 @@
   "keywords": [],
   "author": "Faustin",
   "license": "ISC",
-  "bugs": {
-    "url": ""
-  },
   "homepage": "",
   "dependencies": {
     "@babel/cli": "^7.24.6",
