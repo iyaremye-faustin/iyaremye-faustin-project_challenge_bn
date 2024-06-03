@@ -8,7 +8,7 @@
     "test:dev": "env NODE_ENV=test npm sequelize && npm test",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "start": "npm run db:reset:all && npm run db:migrate && npm run db:seed && node -r ts-node/register/transpile-only -r tsconfig-paths/register ./dist/index.js",
+    "start": "npm run db:reset:all && npm run db:migrate && npm run db:seed && node -r ts-node/register/transpile-only -r node ./dist/index.js",
     "build": "mkdir dist && npm ci && tsc -p tsconfig.prod.json",
     "db:prod": "env NODE_ENV=production npm db:create && npm db:migrate && npm db:seed npm build",
     "dev": "nodemon",
