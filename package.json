@@ -11,7 +11,7 @@
     "start": "npm run db:reset:all && npm run db:migrate && npm run db:seed && node -r ts-node/register/transpile-only  && node ./dist/index.js",
     "build": "mkdir dist && npm ci && tsc -p tsconfig.prod.json",
     "db:prod": "env NODE_ENV=production npm db:create && npm db:migrate && npm db:seed npm build",
-    "dev": "nodemon",
+    "dev": "ts-node -r tsconfig-paths/register src/index.ts",
     "lint": "eslint src/",
     "lint:fix": "eslint --fix src/",
     "format": "prettier --write **/*.ts",
