@@ -25,7 +25,7 @@ const routes: IRoute[] = [
   getOrders,
   users,
   changeRole,
-	orderApprove
+  orderApprove,
 ];
 
 export default routes;

@@ -4,16 +4,20 @@ import BaseModule from '@src/core/base/baseModule';
 class GetAllProductsModule extends BaseModule {
   protected async module(req: Request, res: Response): Promise<any> {
     try {
-      const products = await this.Service.Products.GetAllProducts.call();
+      const { query } = req;
+      const { page, limit } = query;
+      const products = await this.Service.Products.GetAllProducts.call({
+        page,
+        limit,
+      });
       if (!products) {
         return this.badRequest(res);
       }
-      return this.responseHandler(
-        res,
-        this.SUCCESS_CODE,
-        this.SUCCESS_MSG,
-        products
-      );
+      const count = await this.Service.Products.CountProducts.call();
+      return this.responseHandler(res, this.SUCCESS_CODE, this.SUCCESS_MSG, {
+        products,
+        count,
+      });
     } catch (error) {
       return this.responseHandler(
         res,

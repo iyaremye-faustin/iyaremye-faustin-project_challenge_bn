@@ -15,9 +15,6 @@ const dbconfig = {
     host: process.env.DB_HOST_TEST,
     dialect: process.env.DB_DIALECT_TEST,
 		logging: false,
-    dialectOptions: {
-      ssl: { require: false, rejectUnauthorized: false }
-    }
   },
   production: {
     username: process.env.DB_USERNAME_PROD,

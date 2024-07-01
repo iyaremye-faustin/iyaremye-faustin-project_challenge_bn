@@ -1,36 +1,39 @@
-export const route = '/auth';
+export const route = '/users';
 
 export const userData = {
-  username: 'axanti',
-  fullname: 'Golgotha Aksanti',
-  phonenumber: '256753333528',
-  email: 'goloking77@gmail.com',
-  password: '0000000000',
-  dateOfBirth: '12/12/2000',
-  isVegetarian: 1,
+  names: 'Random Name',
+  email: 'random@email.com',
+  password: 'randompassword',
+  telephone: '25707888887',
+  idpassportnumber: '1212121212121212',
+  username: 'randomusername',
 };
 
 export const incompleteUserData = {
-  username: 'gola',
+  username: 'gala',
   password: '000000',
-  phonenumber: '256754643643',
-  fullname: 'gola aksanti',
+  telephone: '',
+  names: 'Gala',
 };
 
 export const loginData = {
-  login: '256753333528',
-  password: '0000000000',
+  login: 'random@email.com',
+  password: 'randompassword',
+};
+export const adminLoginData = {
+  login: 'iyaremyef@gmail.com',
+  password: 'password',
 };
 
 export const withNoPasswordData = {
-  login: '256753333528',
+  login: 'random@email.com',
 };
 
 export const wrongLoginData = {
-  login: '2567833003528',
+  login: '',
 };
 
 export const wrongPasswordData = {
-  login: '256753333528',
+  login: 'random@email.com',
   password: '123456',
 };

@@ -12,6 +12,13 @@ const OrdersByUser = new GetAllOrdersByUserService();
 const approveOrder = new ApproveOrderService();
 const NewOrderItem = new PostOrderItemService();
 
-const Orders = { PostOrder, GetAll, CountOrders, OrdersByUser, approveOrder,NewOrderItem };
+const Orders = {
+  PostOrder,
+  GetAll,
+  CountOrders,
+  OrdersByUser,
+  approveOrder,
+  NewOrderItem,
+};
 
 export default Orders;

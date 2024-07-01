@@ -1,16 +1,25 @@
-/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
+const dotenv = require('dotenv');
+const { pathsToModuleNameMapper } = require('ts-jest');
+const { compilerOptions } = require('./tsconfig');
+
+// Load environment variables based on NODE_ENV
+const env = process.env.NODE_ENV || 'test';
+dotenv.config({ path: `.env.${env}` });
+
 module.exports = {
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  testRegex: '(/tests/integration/.*|(\\.|/)(test|spec))\\.(js|ts)x?$',
-  transform: {
-      '^.+\\.(js|ts)x?$': 'ts-jest'
-  },
+  preset: 'ts-jest',
   testEnvironment: 'node',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)x?$',
+  transform: {
+    '^.+\\.(ts|tsx)$': 'ts-jest',
+  },
   clearMocks: true,
   verbose: false,
   coverageDirectory: 'coverage',
   collectCoverageFrom: ['src/**/*.ts'],
-  //setupFiles: ['dotenv/config','./jest.setup.ts'],
+	coverageDirectory: 'coverage',
+  collectCoverageFrom: ['src/**/*.ts'],
   coveragePathIgnorePatterns: [
     'node_modules',
     'coverage',
@@ -19,4 +28,6 @@ module.exports = {
     'src/core',
     'src/database',
   ],
+  setupFilesAfterEnv: ['dotenv/config'],
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
 };

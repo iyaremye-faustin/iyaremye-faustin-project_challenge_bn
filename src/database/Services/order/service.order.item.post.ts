@@ -6,9 +6,9 @@ class PostOrderItemService extends BaseService {
     const { order_id, product_id, price, quantity } = data;
     const item = await this.database.OrderItem.create({
       order_id,
-			product_id,
-			price,
-			quantity
+      product_id,
+      price,
+      quantity,
     });
 
     if (!item) return null;

@@ -6,7 +6,6 @@ const postOrder = new PostOrdersRoute();
 const getOrders = new GetAllOrdersRoute();
 const orderApprove = new ApproveOrderRoute();
 
-
 const OrderRoutes = { postOrder, getOrders, orderApprove };
 
 export default OrderRoutes;

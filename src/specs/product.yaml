@@ -43,6 +43,23 @@ paths:
         - Product
       summary: Get all products
       operationId: getProducts
+      parameters:
+        - name: page
+          in: query
+          description: The page number to retrieve
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+        - name: limit
+          in: query
+          description: The number of products to retrieve per page
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 1
       responses:
         '200':
           description: OK

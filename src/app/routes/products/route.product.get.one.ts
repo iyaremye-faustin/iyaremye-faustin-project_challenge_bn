@@ -4,7 +4,7 @@ import Validators from '@src/app/validator';
 import Modules from '@src/app/modules';
 
 class GetOneProductRoute implements IRoute {
-  path = '/product';
+  path = '/products';
 
   router = Router();
 

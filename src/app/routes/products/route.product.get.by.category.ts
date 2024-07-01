@@ -15,7 +15,7 @@ class GetProductsByCategoryRoute implements IRoute {
 
   private initRoute() {
     this.router.route(`${this.path}/category/:category`).get(
-			(req: Request, res: Response, next: NextFunction) =>
+      (req: Request, res: Response, next: NextFunction) =>
         Middlewares.UserMiddlewares.CheckUserAuthenticated.run(req, res, next),
       (req: Request, res: Response, next: NextFunction) =>
         Validators.Products.GetProductByCategory.run(req, res, next),

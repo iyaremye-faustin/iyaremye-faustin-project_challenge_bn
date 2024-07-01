@@ -81,7 +81,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Login'
-  /auth/signout:
+  /api/v1/users/signout:
     post:
       tags:
         - User

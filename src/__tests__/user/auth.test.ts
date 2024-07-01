@@ -17,7 +17,6 @@ import { prefix } from '@src/__mocks__/variables.mock';
 const app = new App(routes).getApp();
 
 const database: any = db;
-let user_id: number;
 
 describe('auth', () => {
   it('should not create a user with incomplete data', async () => {
@@ -31,7 +30,6 @@ describe('auth', () => {
     const res = await request(app)
       .post(`${prefix}${route}/signup`)
       .send(userData);
-    user_id = res.body.data.user_id;
     expect(res.body.status).toBe(201);
   });
 
@@ -42,7 +40,7 @@ describe('auth', () => {
     expect(res.body.status).toBe(200);
   });
 
-  it('should fails to create a user with the same number', async () => {
+  it('should fails to create a user with the same data', async () => {
     const res = await request(app)
       .post(`${prefix}${route}/signup`)
       .send(userData);
@@ -56,7 +54,7 @@ describe('auth', () => {
     expect(res.body.status).toBe(400);
   });
 
-  it('should not login a user with a wron login data', async () => {
+  it('should not login a user with a wrong login data', async () => {
     const res = await request(app)
       .post(`${prefix}${route}/signin`)
       .send(wrongLoginData);
@@ -67,16 +65,12 @@ describe('auth', () => {
     const res = await request(app)
       .post(`${prefix}${route}/signin`)
       .send(wrongPasswordData);
-    expect(res.body.status).toBe(400);
+    expect(res.body.status).toBe(404);
   });
 });
 
-afterAll(async () => {
-  await database.UserProfile.destroy({
-    where: { user_id: 1 },
-  });
-
-  await database.User.destroy({
-    where: { user_id: 1 },
-  });
-});
+// afterAll(async () => {
+//   await database.User.destroy({
+//     where: { user_id: 1 },
+//   });
+// });

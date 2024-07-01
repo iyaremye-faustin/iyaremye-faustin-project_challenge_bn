@@ -11,7 +11,7 @@ class PostProductValidator extends BaseMiddleware {
       name: this.joi.string().required(),
       image_url: this.joi.string().uri(),
       description: this.joi.string().required(),
-			quantity_per_acre : Joi.number().integer().positive().required(),
+      quantity_per_acre: Joi.number().integer().positive().required(),
     });
     this.bodyHandler(req, res, itemSchema, next);
   }
